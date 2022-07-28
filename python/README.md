@@ -27,7 +27,4 @@ If you are providing a solution without using the build file, we want you to nam
 
  # How to execute the unit tests
 
- `python3 -m unittest discover` will execute the unit test cases.
-
- The unit test coverage is found by the command :
-`coverage run -m unittest discover`
+ `python3 -m unittest discover` will execute all the unit test cases.
