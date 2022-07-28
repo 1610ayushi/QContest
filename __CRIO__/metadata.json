@@ -1,3 +1,5 @@
-{
-    "module_id": "ME_OBJECT_MODELING_GEEKTRUST_MODULE_SERVICES"
-}
+{ 
+    "module_id": "ME_QCONTEST_MODULE_SERVICES",
+    "module_language": "PYTHON",
+    "me_id": "ME_QCONTEST"
+ }
