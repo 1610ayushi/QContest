@@ -27,4 +27,4 @@ If you are providing a solution without using the build file, we want you to nam
 
  # How to execute the unit tests
 
- `python3 -m unittest discover` will execute all the unit test cases.
+ `python3 -m unittest -v tests/*.py` will execute all the unit test cases.
