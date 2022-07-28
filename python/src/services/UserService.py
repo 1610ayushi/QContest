@@ -21,5 +21,5 @@ class UserService:
     # 1) Get all the users in ascending Order w.r.t score.
     # 2) Get all the users in descending Order w.r.t score.
 
-    def getAllUser(self, order: UserOrder) -> List[User]:
+    def getUsers(self, order: UserOrder) -> List[User]:
         pass

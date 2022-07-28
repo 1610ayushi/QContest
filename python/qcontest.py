@@ -47,11 +47,11 @@ def run(commandLineArgs : List[str]) -> None:
 
             elif tokens[0] == "LIST_QUESTION":
                 if(len(tokens) == 1):
-                    qList = questionService.getAllQuestionLevelWise(None)
+                    qList = questionService.getQuestions(None)
                     print(qList)
                 elif(len(tokens) == 2):
                     level = Level[tokens[1]]
-                    qList = questionService.getAllQuestionLevelWise(level)
+                    qList = questionService.getQuestions(level)
                     print(qList)
 
             elif tokens[0] == "CREATE_CONTEST":
@@ -64,11 +64,11 @@ def run(commandLineArgs : List[str]) -> None:
 
             elif tokens[0] == "LIST_CONTEST":
                 if(len(tokens) == 1):
-                    cList = contestService.getAllContestLevelWise(None)
+                    cList = contestService.getContests(None)
                     print(cList)
                 elif(len(tokens) == 2):
                     level = Level[tokens[1]]
-                    cList = contestService.getAllContestLevelWise(level)
+                    cList = contestService.getContests(level)
                     print(cList)
 
             elif tokens[0] == "ATTEND_CONTEST":
@@ -96,7 +96,7 @@ def run(commandLineArgs : List[str]) -> None:
 
             elif tokens[0] == "LEADERBOARD":
                 score_order = UserOrder(f"SCORE_{tokens[1]}")
-                uList = userService.getAllUser(score_order)
+                uList = userService.getUsers(score_order)
                 print(uList)
                 
             else:

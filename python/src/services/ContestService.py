@@ -46,7 +46,7 @@ class ContestService:
     # 1) Get all the questions.
     # 2) Get all the questions for a given level.
 
-    def getAllContestLevelWise(self, level: Level) -> List[Contest]:
+    def getContests(self, level: Level) -> List[Contest]:
         pass
 
     # TODO: CRIO_TASK_MODULE_SERVICES
@@ -115,6 +115,7 @@ class ContestService:
     # Complete the implementation of contestHistory method.
     # Implementation must take care of the following cases:-
     # 1) Return the list of contestants in descending order( user with highest score is first ) as per their score in a given contest.
+    # 2) Throw RunTimeException with an appropriate message if the contest was never ran.
 
     def contestHistory(self,contest_id) -> List[Contestant]:
         pass

@@ -33,7 +33,7 @@ public class UserService implements IUserService{
     // 2) Get all the users in descending Order w.r.t score.
 
     @Override
-    public List<User> getAllUser(UserOrder userOrder) {
+    public List<User> getUsers(UserOrder userOrder) {
      return Collections.emptyList();
     } 
 }

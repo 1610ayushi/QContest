@@ -7,5 +7,5 @@ import com.crio.qcontest.entities.Question;
 
 public interface IQuestionService {
     Question createQuestion(String title, Level level, Integer difficultyScore);
-    List<Question> getAllQuestionLevelWise(Level level); 
+    List<Question> getQuestions(Level level); 
 }

@@ -7,5 +7,5 @@ import com.crio.qcontest.entities.User;
 
 public interface IUserService {
     User createUser(String name);
-    List<User> getAllUser(UserOrder userOrder);    
+    List<User> getUsers(UserOrder userOrder);    
 }

@@ -85,13 +85,13 @@ public class QcontestApplication {
 					{
 						if(tokens.size() == 1){
 
-							List<Question> qList = questionService.getAllQuestionLevelWise(null);
+							List<Question> qList = questionService.getQuestions(null);
 							System.out.println(qList);
 
 						}else if(tokens.size() == 2){
 
                             String level = tokens.get(1);
-						    List<Question> qList = questionService.getAllQuestionLevelWise(Level.valueOf(level));
+						    List<Question> qList = questionService.getQuestions(Level.valueOf(level));
 						    System.out.println(qList);
 
                         }
@@ -113,13 +113,13 @@ public class QcontestApplication {
 					{
                         if(tokens.size() == 1){
 
-                            List<Contest> qList = contestService.getAllContestLevelWise(null);
+                            List<Contest> qList = contestService.getContests(null);
                             System.out.println(qList);
 
                         }else if(tokens.size() == 2){
 
                             String level = tokens.get(1);
-                            List<Contest> qList = contestService.getAllContestLevelWise(Level.valueOf(level));
+                            List<Contest> qList = contestService.getContests(Level.valueOf(level));
                             System.out.println(qList);
                             
                         }                
@@ -164,7 +164,7 @@ public class QcontestApplication {
 					case "LEADERBOARD":
 					{
                         String order = tokens.get(1);
-                        List<User> uList = userService.getAllUser(UserOrder.valueOf("SCORE_"+order));
+                        List<User> uList = userService.getUsers(UserOrder.valueOf("SCORE_"+order));
                         System.out.println(uList);
 					}
 					break;

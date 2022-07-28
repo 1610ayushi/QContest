@@ -75,7 +75,7 @@ public class ContestService implements IContestService {
     // 2) Get all the questions for a given level.
 
     @Override
-    public List<Contest> getAllContestLevelWise(Level level) {
+    public List<Contest> getContests(Level level) {
      return Collections.emptyList();
     }
 
@@ -160,6 +160,7 @@ public class ContestService implements IContestService {
     // Complete the implementation of contestHistory method.
     // Implementation must take care of the following cases:-
     // 1) Return the list of contestants in descending order( user with highest score is first ) as per their score in a given contest.
+    // 2) Throw RunTimeException with an appropriate message if the contest was never ran.
 
     @Override
     public List<Contestant> contestHistory(Long contestId) {

@@ -8,7 +8,7 @@ import com.crio.qcontest.entities.Level;
 
 public interface IContestService {
     Contest createContest(String title, Level level, String createdBy, Integer numQuestions);
-    List<Contest> getAllContestLevelWise(Level level);
+    List<Contest> getContests(Level level);
     Contestant createContestant(Long contestId, String userName);
     String deleteContestant(Long contestId, String userName);
     List<Contestant> runContest(Long contestId, String createdBy);

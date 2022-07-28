@@ -10,7 +10,7 @@ class QuestionService:
         q = Question(title,level,difficultyScore)
         return self._questionRepository.save(q)
 
-    def getAllQuestionLevelWise(self, level: Level) -> List[Question]:
+    def getQuestions(self, level: Level) -> List[Question]:
         if level is None:
             return self._questionRepository.findAll()
         return self._questionRepository.findAllQuestionLevelWise(level)
