@@ -21,6 +21,8 @@ ext {
 	buildId = System.currentTimeMillis()
 }
 
+buildDir = '/tmp/external_build'
+
 application {
     // Define the main class for the application.
     mainClass = 'com.crio.qcontest.QcontestApplication'
