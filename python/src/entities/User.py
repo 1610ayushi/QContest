@@ -19,7 +19,7 @@ class User:
     # 1) Set an appropriate totalScore.
     # 2) Throw a Runtime Exception with an appropriate message for invalid score.
 
-    def modify_score(self, score: int):
+    def modify_score(self, score: int) -> None:
         pass
 
     def __repr__(self) -> str:
