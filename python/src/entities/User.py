@@ -14,7 +14,7 @@ class User:
         return self._total_score
 
 
-    def modify_score(self, score: int):
+    def modify_score(self, score: int) -> None:
 
     def __repr__(self) -> str:
         return f'User [id="{self._id}"]'

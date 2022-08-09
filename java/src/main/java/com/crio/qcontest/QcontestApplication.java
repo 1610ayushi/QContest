@@ -165,7 +165,15 @@ public class QcontestApplication {
 					{
                         String order = tokens.get(1);
                         List<User> uList = userService.getUsers(UserOrder.valueOf("SCORE_"+order));
-                        System.out.println(uList);
+                        System.out.print("[");
+                        for(int  i=0; i < uList.size(); i++){
+                            if(i == (uList.size()-1)){
+                                System.out.print("User [id=" + uList.get(i).getId() + ", totalScore=" + uList.get(i).getTotalScore() + "]"); 
+                            }else{
+                                System.out.print("User [id=" + uList.get(i).getId() + ", totalScore=" + uList.get(i).getTotalScore() + "], ");
+                            }
+                        }
+                        System.out.print("]");
 					}
 					break;
 

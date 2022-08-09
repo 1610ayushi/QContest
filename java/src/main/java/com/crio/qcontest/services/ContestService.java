@@ -112,7 +112,7 @@ public class ContestService implements IContestService {
     @Override
     public List<Contestant> runContest(Long contestId, String createdBy) {
         // Check if contest is valid as per the required conditions.
-        Contest contest = contestRepository.findById(contestId).orElseThrow(() -> new RuntimeException("Contest: "+contestId+" not Found!"));
+        Contest contest = contestRepository.findById(contestId).orElseThrow(() -> new RuntimeException("Contest: "+contestId+" not found!"));
         ContestStatus contestStatus = contest.getContestStatus();
         if(ContestStatus.IN_PROGRESS.equals(contestStatus)){
             throw new RuntimeException("Contest has already started!");
