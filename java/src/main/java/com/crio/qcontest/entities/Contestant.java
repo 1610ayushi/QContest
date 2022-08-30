@@ -7,7 +7,7 @@ public class Contestant {
     private final User user;
     private final Contest contest;
     private Integer currentContestPoints;
-    private List<Question> attemptedQuestions;
+    private final List<Question> attemptedQuestions;
 
     public Contestant(User user, Contest contest) {
         this.user = user;
