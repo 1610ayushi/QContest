@@ -17,7 +17,7 @@ import com.crio.qcontest.repositories.IContestantRepository;
 import com.crio.qcontest.repositories.IQuestionRepository;
 import com.crio.qcontest.repositories.IUserRepository;
 
-public class ContestService implements IContestService {
+public class ContestService{
     private final IContestantRepository contestantRepository;
     private final IContestRepository contestRepository;
     private final IQuestionRepository questionRepository;
@@ -31,7 +31,6 @@ public class ContestService implements IContestService {
         this.userRepository = userRepository;
     }
 
-    @Override
     public Contest createContest(String title, Level level, String createdBy, Integer numQuestions) {
         // Check if creator exists.
         User creator = userRepository.findByName(createdBy).orElseThrow(() -> new RuntimeException("User with name: "+ createdBy +" not found!")); 
@@ -74,7 +73,6 @@ public class ContestService implements IContestService {
     // 1) Get all the questions.
     // 2) Get all the questions for a given level.
 
-    @Override
     public List<Contest> getContests(Level level) {
      return Collections.emptyList();
     }
@@ -87,12 +85,10 @@ public class ContestService implements IContestService {
     // 2) Validate if the contest is has not yet started / ended otherwise throw RunTimeException with an appropriate message.
     // 3) Create and store Contestant in the contestantRepository.
 
-    @Override
     public Contestant createContestant(Long contestId, String userName) {
      return null;
     }
 
-    @Override
     public String deleteContestant(Long contestId, String userName) {
         // Validate if the user is registered in the contest already.
         Contestant contestant = contestantRepository.find(contestId, userName).orElseThrow(() -> new RuntimeException("Contestant with "+contestId+" and "+userName+" not found!"));
@@ -109,7 +105,6 @@ public class ContestService implements IContestService {
         return "Contestant with name "+userName+" for contest "+contestId+" deleted!";
     }
 
-    @Override
     public List<Contestant> runContest(Long contestId, String createdBy) {
         // Check if contest is valid as per the required conditions.
         Contest contest = contestRepository.findById(contestId).orElseThrow(() -> new RuntimeException("Contest: "+contestId+" not found!"));
@@ -162,7 +157,6 @@ public class ContestService implements IContestService {
     // 1) Return the list of contestants in descending order( user with highest score is first ) as per their score in a given contest.
     // 2) Throw RunTimeException with an appropriate message if the contest was never ran.
 
-    @Override
     public List<Contestant> contestHistory(Long contestId) {
      return Collections.emptyList();
     }  

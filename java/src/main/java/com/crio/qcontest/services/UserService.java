@@ -8,7 +8,7 @@ import com.crio.qcontest.constants.UserOrder;
 import com.crio.qcontest.entities.User;
 import com.crio.qcontest.repositories.IUserRepository;
 
-public class UserService implements IUserService{
+public class UserService{
 
     private final IUserRepository userRepository;
 
@@ -21,7 +21,6 @@ public class UserService implements IUserService{
     // Implementation must take care of the following cases:-
     // 1) Create and store user in the repository.
 
-    @Override
     public User createUser(String name) {
      return null;
     }
@@ -32,7 +31,6 @@ public class UserService implements IUserService{
     // 1) Get all the users in ascending Order w.r.t score.
     // 2) Get all the users in descending Order w.r.t score.
 
-    @Override
     public List<User> getUsers(UserOrder userOrder) {
      return Collections.emptyList();
     } 

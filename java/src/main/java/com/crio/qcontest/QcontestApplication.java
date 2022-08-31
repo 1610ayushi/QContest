@@ -21,9 +21,6 @@ import com.crio.qcontest.repositories.IUserRepository;
 import com.crio.qcontest.repositories.QuestionRepository;
 import com.crio.qcontest.repositories.UserRepository;
 import com.crio.qcontest.services.ContestService;
-import com.crio.qcontest.services.IContestService;
-import com.crio.qcontest.services.IQuestionService;
-import com.crio.qcontest.services.IUserService;
 import com.crio.qcontest.services.QuestionService;
 import com.crio.qcontest.services.UserService;
 
@@ -46,9 +43,9 @@ public class QcontestApplication {
         
 
         // Initialize services
-        IUserService userService = new UserService(userRepository);
-        IQuestionService questionService = new QuestionService(questionRepository);
-        IContestService contestService = new ContestService(contestantRepository, contestRepository, questionRepository, userRepository);
+        UserService userService = new UserService(userRepository);
+        QuestionService questionService = new QuestionService(questionRepository);
+        ContestService contestService = new ContestService(contestantRepository, contestRepository, questionRepository, userRepository);
 
         
         String inputFile = commandLineArgs.get(0).split("=")[1];
