@@ -11,4 +11,5 @@ public interface IQuestionRepository {
     List<Question> findAll();
     Optional<Question> findById(Long id);
     List<Question> findAllQuestionLevelWise(Level level);
+    Integer count();
 }

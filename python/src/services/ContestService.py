@@ -21,11 +21,13 @@ class ContestService:
         creator = self._userRepository.findByName(created_by)
         if creator is None:
             raise Exception(f"User with name: {created_by} not found!")
-        # Get all the questions from the repository.
-        questionList = self._questionRepository.findAllQuestionLevelWise(level)
+        # Get total count of questions in repository.
+        totalQuestionsCount = self._questionRepository.count()
         # Throw RunTime Exception if requested number of questions are not present in the repository.
-        if len(questionList) <= num_questions:
+        if totalQuestionsCount <= num_questions:
             raise Exception(f"Requested Number of questions: {num_questions} cannot be fulfilled!")
+        # Get questions with specified level from the repository.
+        questionList = self._questionRepository.findAllQuestionLevelWise(level)
         # Pick up random requested number of questions from the question list fetch from the repository.
         randomList = self._pickRandomQuestions(questionList,num_questions);
         # Create a new Contest Object.

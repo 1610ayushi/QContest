@@ -45,4 +45,10 @@ public class QuestionRepository implements IQuestionRepository{
         // Find all the contests for a given level stored in HashMap.
         return questionMap.values().stream().filter(q -> q.getLevel() == level).collect(Collectors.toList());
     }
+
+    @Override
+    public Integer count() {
+        // Get total number of questions stored in HashMap.
+        return questionMap.size();
+    }
 }

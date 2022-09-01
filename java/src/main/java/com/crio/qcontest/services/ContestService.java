@@ -34,12 +34,14 @@ public class ContestService{
     public Contest createContest(String title, Level level, String createdBy, Integer numQuestions) {
         // Check if creator exists.
         User creator = userRepository.findByName(createdBy).orElseThrow(() -> new RuntimeException("User with name: "+ createdBy +" not found!")); 
-        // Get all the questions from the repository.
-        List<Question> questionList = questionRepository.findAllQuestionLevelWise(level);
+        // Get total count of questions in repository.
+        Integer totalQuestionsCount = questionRepository.count();
         // Throw RunTime Exception if requested number of questions are not present in the repository.
-        if(questionList.size() <= numQuestions){
+        if(totalQuestionsCount <= numQuestions){
             throw new RuntimeException("Requested Number of questions: "+numQuestions+" cannot be fulfilled!");
         }
+        // Get questions with specified level from the repository.
+        List<Question> questionList = questionRepository.findAllQuestionLevelWise(level);
         // Pick up random requested number of questions from the question list fetch from the repository.
         List<Question> randomList = pickRandomQuestions(questionList,numQuestions);
         // Create a new Contest Object.

@@ -27,3 +27,6 @@ class QuestionRepository:
     def findAllQuestionLevelWise(self,level: Level) -> List[Question]:
         # Find all the contests for a given level stored in Dictionary.
         return list(filter(lambda q: q.get_level() == level,self._questionMap.values()))
+
+    def count(self) ->  int:
+        return len(self._questionMap)
