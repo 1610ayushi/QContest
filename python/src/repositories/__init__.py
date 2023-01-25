@@ -1,0 +1,4 @@
+from .ContestRepository import ContestRepository
+from .QuestionRepository import QuestionRepository
+from .UserRepository import UserRepository
+from .ContestantRepository import ContestantRepository
