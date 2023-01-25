@@ -1,5 +1,1 @@
-{ 
-    "module_id": "ME_QCONTEST_MODULE_ENTITIES",
-    "module_language": "PYTHON",
-    "me_id": "ME_QCONTEST"
- }
+{"module_id": "ME_QCONTEST_MODULE_ENTITIES", "module_language": "JAVA", "me_id": "ME_QCONTEST"}

@@ -19,7 +19,7 @@ public class UserTests {
         // Act and Assert
         Assertions.assertThrows(RuntimeException.class, ()-> user.modifyScore(-1));
     }
-
+ 
     @Test
     public void modifyScore_WhenScoreIsModified_ModifyScore(){
         // Arrange

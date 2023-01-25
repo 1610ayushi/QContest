@@ -4,7 +4,7 @@ public class User {
     private final String name;
     private Integer totalScore;
     private final Long id;
-
+ 
     public User(String name, Long id) {
         this.name = name;
         this.id = id;
@@ -34,6 +34,9 @@ public class User {
     // 2) Throw a Runtime Exception with an appropriate message for invalid score.
 
     public void modifyScore(Integer score){
+        if(score<0)
+            throw new RuntimeException("The score can not be negative.");
+        totalScore=score;
     }
 
     @Override
